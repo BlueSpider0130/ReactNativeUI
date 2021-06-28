@@ -65,7 +65,7 @@ class FriendsScreen extends React.Component {
               <Text style={{color:'#fff', textAlign:'left', fontSize:wp('5%'), paddingBottom:2, fontWeight:'bold'}}>Milla Jovovich</Text>
               <Text style={{color:'#fff', textAlign:'left', fontSize:wp('3.5%'), }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
               </Text>
-              <TouchableOpacity style={styles.bottomBtn}>
+              <TouchableOpacity style={styles.bottomBtn} onPress={()=>{this.props.navigation.navigate('Main')}}>
                 <Text style={{textAlign:'center', color:'#fff', fontWeight:'bold'}}>Fallaps</Text>
                 <Ionicons name={'caret-forward-circle'} style={{color:'#fff'}} size={25} /> 
               </TouchableOpacity>

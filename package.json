@@ -11,19 +11,27 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/toolbar-android": "^0.1.0-rc.2",
+    "@react-navigation/bottom-tabs": "^5.11.11",
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.9.0",
     "native-base": "^2.15.2",
     "react": "17.0.1",
     "react-native": "0.64.2",
+    "react-native-anchor-carousel": "^3.1.2",
     "react-native-gesture-handler": "^1.7.0",
     "react-native-hide-show-password-input": "^1.2.0",
     "react-native-linear-gradient": "^2.5.6",
+    "react-native-paper": "^4.9.2",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-safe-area-context": "^3.1.4",
     "react-native-screens": "^2.10.1",
     "react-native-svg": "^12.1.1",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-video": "^5.1.1",
+    "react-native-video-player": "^0.10.1",
+    "react-navigation": "^4.4.4",
+    "react-navigation-material-bottom-tabs": "^2.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

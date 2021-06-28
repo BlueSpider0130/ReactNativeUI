@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './source/LoginScreen';
 import FriendsScreen from './source/FriendsScreen';
-
+import MainTab from './source/MainTab';
 const Stack = createStackNavigator();
 
 class App extends React.Component {
@@ -21,6 +21,11 @@ class App extends React.Component {
           <Stack.Screen
             name="Friends"
             component={FriendsScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Main"
+            component={MainTab}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

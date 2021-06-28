@@ -95,12 +95,12 @@ class HomeScreen extends React.Component {
                             <Image style={{ width: '30%', height: '80%', padding: 5 }} source={require('../../assets/movie2.jpg')} />
                             <View style={styles.textGroup}>
                                 <View style={{}}>
-                                    <Text style={{ color: 'white', }}>TED'S TECH TAKE</Text>
-                                    <Text style={{ color: 'white' }}>INVESTORS BY STORMS</Text>
+                                    <Text style={{ color: 'white', }}>This is my skype id</Text>
+                                    <Text style={{ color: 'white' }}>live:.cid.56b3080324bf2018</Text>
                                 </View>
                                 <View>
-                                    <Text style={{ color: '#aaa' }}>Local tech shop takes the</Text>
-                                    <Text style={{ color: '#aaa' }}>Industry by storm</Text>
+                                    <Text style={{ color: '#aaa' }}>please contact me here</Text>
+                                    <Text style={{ color: '#aaa' }}>thanks Christopher</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>

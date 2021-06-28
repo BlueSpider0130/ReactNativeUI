@@ -52,7 +52,7 @@ class SettingsScreen extends React.Component {
                                     style={styles.rec}
                                     onPress={() => {
                                     }}>
-                                        <ImageBackground style={{borderRadius:10, width:150, height:150, display:'flex', alignItems:'flex-start', justifyContent:'flex-end'}} source={require('../../assets/movie2.jpg')}>
+                                        <ImageBackground style={{borderRadius:10, width:150, height:150, display:'flex', alignItems:'flex-start', justifyContent:'flex-end'}} source={require('../../assets/news.jpg')}>
                                             <Text style={{color:'#fff', marginLeft:10, marginBottom:10, fontWeight:'bold'}}>NEWS</Text>
                                         </ImageBackground>
                                 </TouchableOpacity>
@@ -61,7 +61,7 @@ class SettingsScreen extends React.Component {
                                     style={styles.rec}
                                     onPress={() => {
                                     }}>
-                                        <ImageBackground style={{borderRadius:10, width:150, height:150, display:'flex', alignItems:'flex-start', justifyContent:'flex-end'}} source={require('../../assets/movie2.jpg')}>
+                                        <ImageBackground style={{borderRadius:10, width:150, height:150, display:'flex', alignItems:'flex-start', justifyContent:'flex-end'}} source={require('../../assets/mall.jpg')}>
                                             <Text style={{color:'#fff', marginLeft:10, marginBottom:10, fontWeight:'bold'}}>MALL</Text>
                                         </ImageBackground>
                                 </TouchableOpacity>
@@ -72,7 +72,7 @@ class SettingsScreen extends React.Component {
                                     style={styles.rec}
                                     onPress={() => {
                                     }}>
-                                        <ImageBackground style={{borderRadius:10, width:150, height:150, display:'flex', alignItems:'flex-start', justifyContent:'flex-end'}} source={require('../../assets/movie2.jpg')}>
+                                        <ImageBackground style={{borderRadius:10, width:150, height:150, display:'flex', alignItems:'flex-start', justifyContent:'flex-end'}} source={require('../../assets/community.jpg')}>
                                             <Text style={{color:'#fff', marginLeft:10, marginBottom:10, fontWeight:'bold'}}>COMMUNITY</Text>
                                         </ImageBackground>
                                 </TouchableOpacity>
@@ -81,7 +81,7 @@ class SettingsScreen extends React.Component {
                                     style={styles.rec}
                                     onPress={() => {
                                     }}>
-                                        <ImageBackground style={{borderRadius:10, width:150, height:150, display:'flex', alignItems:'flex-start', justifyContent:'flex-end'}} source={require('../../assets/movie2.jpg')}>
+                                        <ImageBackground style={{borderRadius:10, width:150, height:150, display:'flex', alignItems:'flex-start', justifyContent:'flex-end'}} source={require('../../assets/community.jpg')}>
                                             <Text style={{color:'#fff', marginLeft:10, marginBottom:10, fontWeight:'bold'}}>POLLS</Text>
                                         </ImageBackground>
                                 </TouchableOpacity>

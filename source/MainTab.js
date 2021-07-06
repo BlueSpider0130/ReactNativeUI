@@ -8,44 +8,43 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 
-
-class MainTab extends React.Component {
-    render() {
-        return (
-            <Tab.Navigator tabBarOptions = {{
-                activeTintColor: '#ffffff',
-                inactiveTintColor: '#ffffff',
-                activeBackgroundColor: '#202020',
-                inactiveBackgroundColor: '#272727',}}>
-                <Tab.Screen 
-                    name="home" 
-                    component={HomeScreen} 
-                    options={{
-                        tabBarLabel: 'HOME',
-                        tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="home" color={color} size={size} />
-                        ),
-                    }} />
-                <Tab.Screen 
-                    name="SETTING"
-                    component={SettingsScreen} 
-                    options={{
-                        tabBarLabel: 'SETTINGS',
-                        tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="settings-sharp" color={color} size={size} />
-                        ),
-                    }} />
-                <Tab.Screen 
-                    name="MY ACCOUNT" 
-                    component={AccountScreen} 
-                    options={{
-                        tabBarLabel: 'MY ACCOUNT',
-                        tabBarIcon: ({ color, size }) => (
-                            <Ionicons name="person" color={color} size={size} />
-                        ),
-                    }} />
-            </Tab.Navigator>
-        );
-    }
+function MainTab() {
+    return (
+        <Tab.Navigator tabBarOptions={{
+            activeTintColor: '#ffffff',
+            inactiveTintColor: '#ffffff',
+            activeBackgroundColor: '#202020',
+            inactiveBackgroundColor: '#272727',
+        }}>
+            <Tab.Screen
+                name="home"
+                component={HomeScreen}
+                options={{
+                    tabBarLabel: 'HOME',
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="home" color={color} size={size} />
+                    ),
+                }} />
+            <Tab.Screen
+                name="SETTING"
+                component={SettingsScreen}
+                options={{
+                    tabBarLabel: 'SETTINGS',
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="settings-sharp" color={color} size={size} />
+                    ),
+                }} />
+            <Tab.Screen
+                name="MY ACCOUNT"
+                component={AccountScreen}
+                options={{
+                    tabBarLabel: 'MY ACCOUNT',
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="person" color={color} size={size} />
+                    ),
+                }} />
+        </Tab.Navigator>
+    );
 }
+
 export default MainTab;

@@ -37,11 +37,11 @@ const data = [
     }
 ];
 
-class HomeScreen extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    renderItem = ({ item, index }) => {
+
+function HomeScreen(){
+    let numberCarousel = React.useRef(null)
+    
+    const renderItem = ({ item, index }) => {
         const { uri, title, content } = item;
         return (
 
@@ -49,7 +49,7 @@ class HomeScreen extends React.Component {
                 activeOpacity={1}
                 style={styles.item}
                 onPress={() => {
-                    this.numberCarousel.scrollToIndex(index);
+                    numberCarousel.scrollToIndex(index);
                 }}
             >
                 <ImageBackground
@@ -66,80 +66,79 @@ class HomeScreen extends React.Component {
 
         )
     }
+    return (
+        <Container>
+            <ScrollView
+                style={styles.container}
+                contentContainerStyle={{ display: 'flex', alignItems: "center", flexDirection: 'column', alignSelf: 'center' }}
+            >
+                <Text style={styles.header}>News</Text>
+                <View style={styles.caouselContainer}>
+                    <Carousel
+                        style={styles.carousel}
+                        data={data}
+                        renderItem={renderItem}
+                        itemWidth={0.7 * width}
+                        inActiveOpacity={0.3}
+                        containerWidth={width - 10}
+                        ref={(c) => {
+                            numberCarousel = c;
+                        }}
+                    />
+                </View>
+                <View style={styles.cardList}>
+                    <TouchableOpacity
+                        style={styles.one}
+                    >
+                        <Image style={{ width: '30%', height: '80%', padding: 5 }} source={require('../../assets/movie2.jpg')} />
+                        <View style={styles.textGroup}>
+                            <View style={{}}>
+                                <Text style={{ color: 'white', }}>This is my skype id</Text>
+                                <Text style={{ color: 'white' }}>live:.cid.56b3080324bf2018</Text>
+                            </View>
+                            <View>
+                                <Text style={{ color: '#aaa' }}>please contact me here</Text>
+                                <Text style={{ color: '#aaa' }}>thanks Christopher</Text>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.one}
+                    >
+                        <Image style={{ width: '30%', height: '80%', padding: 5 }} source={require('../../assets/movie2.jpg')} />
+                        <View style={styles.textGroup}>
+                            <View style={{}}>
+                                <Text style={{ color: 'white', }}>TED'S TECH TAKE</Text>
+                                <Text style={{ color: 'white' }}>INVESTORS BY STORMS</Text>
+                            </View>
+                            <View>
+                                <Text style={{ color: '#aaa' }}>Local tech shop takes the</Text>
+                                <Text style={{ color: '#aaa' }}>Industry by storm</Text>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.one}
+                    >
+                        <Image style={{ width: '30%', height: '80%', padding: 5 }} source={require('../../assets/movie2.jpg')} />
+                        <View style={styles.textGroup}>
+                            <View style={{}}>
+                                <Text style={{ color: 'white', }}>TED'S TECH TAKE</Text>
+                                <Text style={{ color: 'white' }}>INVESTORS BY STORMS</Text>
+                            </View>
+                            <View>
+                                <Text style={{ color: '#aaa' }}>Local tech shop takes the</Text>
+                                <Text style={{ color: '#aaa' }}>Industry by storm</Text>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+            </ScrollView>
+        </Container>
+    );
 
-    render() {
-        return (
-            <Container>
-                <ScrollView
-                    style={styles.container}
-                    contentContainerStyle={{ display: 'flex', alignItems: "center", flexDirection: 'column', alignSelf: 'center' }}
-                >
-                    <Text style={styles.header}>News</Text>
-                    <View style={styles.caouselContainer}>
-                        <Carousel
-                            style={styles.carousel}
-                            data={data}
-                            renderItem={this.renderItem}
-                            itemWidth={0.7 * width}
-                            inActiveOpacity={0.3}
-                            containerWidth={width - 10}
-                            ref={(c) => {
-                                this.numberCarousel = c;
-                            }}
-                        />
-                    </View>
-                    <View style={styles.cardList}>
-                        <TouchableOpacity
-                            style={styles.one}
-                        >
-                            <Image style={{ width: '30%', height: '80%', padding: 5 }} source={require('../../assets/movie2.jpg')} />
-                            <View style={styles.textGroup}>
-                                <View style={{}}>
-                                    <Text style={{ color: 'white', }}>This is my skype id</Text>
-                                    <Text style={{ color: 'white' }}>live:.cid.56b3080324bf2018</Text>
-                                </View>
-                                <View>
-                                    <Text style={{ color: '#aaa' }}>please contact me here</Text>
-                                    <Text style={{ color: '#aaa' }}>thanks Christopher</Text>
-                                </View>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.one}
-                        >
-                            <Image style={{ width: '30%', height: '80%', padding: 5 }} source={require('../../assets/movie2.jpg')} />
-                            <View style={styles.textGroup}>
-                                <View style={{}}>
-                                    <Text style={{ color: 'white', }}>TED'S TECH TAKE</Text>
-                                    <Text style={{ color: 'white' }}>INVESTORS BY STORMS</Text>
-                                </View>
-                                <View>
-                                    <Text style={{ color: '#aaa' }}>Local tech shop takes the</Text>
-                                    <Text style={{ color: '#aaa' }}>Industry by storm</Text>
-                                </View>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.one}
-                        >
-                            <Image style={{ width: '30%', height: '80%', padding: 5 }} source={require('../../assets/movie2.jpg')} />
-                            <View style={styles.textGroup}>
-                                <View style={{}}>
-                                    <Text style={{ color: 'white', }}>TED'S TECH TAKE</Text>
-                                    <Text style={{ color: 'white' }}>INVESTORS BY STORMS</Text>
-                                </View>
-                                <View>
-                                    <Text style={{ color: '#aaa' }}>Local tech shop takes the</Text>
-                                    <Text style={{ color: '#aaa' }}>Industry by storm</Text>
-                                </View>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-                </ScrollView>
-            </Container>
-        );
-    }
 }
+
 const styles = StyleSheet.create({
 
     container: {

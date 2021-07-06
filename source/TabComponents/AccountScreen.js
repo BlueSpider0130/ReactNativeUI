@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, ImageBackground, Dimensions } from 'react-native';
 import { Container, Header, Title, Left, Right, Body, Icon, Item, Label, Input } from 'native-base';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -10,86 +10,75 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const { width } = Dimensions.get('window');
 
-class AccountScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      first: 0,
-      second: 1,
-      third: 0,
-    };
-  }
+function AccountScreen(props) {
+  const [first, setFirst] = useState(0);
+  const [second, setSecond] = useState(1);
+  const [third, setThird] = useState(0);
 
-  clickItem = (order) => {
+  const clickItem = (order) => {
     if (order == 'first') {
-      console.log(this.state.click)
-      // this.state.click = 1
-      this.setState({ first: 1 })
-      this.setState({ second: 0 })
-      this.setState({ third: 0 })
+      setFirst(1);
+      setSecond(0);
+      setThird(0);
     }
     if (order == 'second') {
-      console.log(this.state.click)
-      // this.state.click = 1
-      this.setState({ second: 1 })
-      this.setState({ first: 0 })
-      this.setState({ third: 0 })
+      setFirst(0);
+      setSecond(1);
+      setThird(0);
     }
     if (order == 'third') {
-      console.log(this.state.third)
-      // this.state.click = 1
-      this.setState({ third: 1 })
-      this.setState({ second: 0 })
-      this.setState({ first: 0 })
+      setFirst(0);
+      setSecond(0);
+      setThird(1);
     }
   }
-  render() {
-    return (
-      <Container>
-        <View style={styles.container}>
-          <Text style={styles.header}>Poll of the day</Text>
-          <Text style={styles.title}>How many cups of the coffe do you drink each day?</Text>
-          <View style={styles.buttonCon}>
-            <TouchableOpacity
-              activeOpacity={0.5}
-              style={this.state.first == 1 ? styles.buttonActive : styles.button}
-              onPress={() => {
-                this.clickItem('first')
-              }}>
-              {this.state.first === 1 && <View style={{ width: 2, backgroundColor: '#efcc4c' }}></View>}
-              <Text style={{ marginLeft: 10, color: '#fff', textAlignVertical: 'center' }}>Less then 1 cup</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              activeOpacity={0.5}
-              style={this.state.second == 1 ? styles.buttonActive : styles.button}
-              onPress={() => {
-                this.clickItem('second')
-              }}>
-              {this.state.second === 1 && <View style={{ width: 2, backgroundColor: '#efcc4c' }}></View>}
-              <Text style={{ marginLeft: 10, color: '#fff', textAlignVertical: 'center' }}>1-4cups of coffee</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              activeOpacity={0.5}
-              style={this.state.third == 1 ? styles.buttonActive : styles.button}
-              onPress={() => {
-                this.clickItem('third')
-              }}>
-              {this.state.third === 1 && <View style={{ width: 2, backgroundColor: '#efcc4c' }}></View>}
-              <Text style={{ marginLeft: 10, color: '#fff', textAlignVertical: 'center' }}>5cups of coffee or more</Text>
-            </TouchableOpacity>
-          </View>
+  return (
+    <Container>
+      <View style={styles.container}>
+        <Text style={styles.header}>Poll of the day</Text>
+        <Text style={styles.title}>How many cups of the coffe do you drink each day?</Text>
+        <View style={styles.buttonCon}>
           <TouchableOpacity
             activeOpacity={0.5}
-            style={styles.submitButton}
+            style={first == 1 ? styles.buttonActive : styles.button}
             onPress={() => {
+              clickItem('first')
             }}>
-              <Text style={{fontSize:15,fontWeight:'bold', textAlign:'center', textAlignVertical:'center'}}>Vote</Text>
+            {first === 1 && <View style={{ width: 2, backgroundColor: '#efcc4c' }}></View>}
+            <Text style={{ marginLeft: 10, color: '#fff', textAlignVertical: 'center' }}>Less then 1 cup</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.5}
+            style={second == 1 ? styles.buttonActive : styles.button}
+            onPress={() => {
+              clickItem('second')
+            }}>
+            {second === 1 && <View style={{ width: 2, backgroundColor: '#efcc4c' }}></View>}
+            <Text style={{ marginLeft: 10, color: '#fff', textAlignVertical: 'center' }}>1-4cups of coffee</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.5}
+            style={third == 1 ? styles.buttonActive : styles.button}
+            onPress={() => {
+              clickItem('third')
+            }}>
+            {third === 1 && <View style={{ width: 2, backgroundColor: '#efcc4c' }}></View>}
+            <Text style={{ marginLeft: 10, color: '#fff', textAlignVertical: 'center' }}>5cups of coffee or more</Text>
           </TouchableOpacity>
         </View>
-      </Container>
-    );
-  }
+        <TouchableOpacity
+          activeOpacity={0.5}
+          style={styles.submitButton}
+          onPress={() => {
+          }}>
+          <Text style={{ fontSize: 15, fontWeight: 'bold', textAlign: 'center', textAlignVertical: 'center' }}>Vote</Text>
+        </TouchableOpacity>
+      </View>
+    </Container>
+  );
+
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -109,7 +98,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     width: '80%',
     fontSize: wp('8%'),
-    marginTop:30
+    marginTop: 30
   },
   buttonCon: {
     display: 'flex',
@@ -134,19 +123,18 @@ const styles = StyleSheet.create({
     height: 40,
     marginBottom: 15
   },
-  submitButton:{
-    width:'85%',
-    backgroundColor:'#efcc4c',
-    height:40,
-    borderRadius:5,
-    display:'flex',
-    flexDirection:'column',
-    justifyContent:'center',
-    marginTop:40
+  submitButton: {
+    width: '85%',
+    backgroundColor: '#efcc4c',
+    height: 40,
+    borderRadius: 5,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    marginTop: 40
   }
 
 });
 
-// ...
 
 export default AccountScreen;

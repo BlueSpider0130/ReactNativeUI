@@ -95,8 +95,8 @@ const styles = StyleSheet.create({
     },
     floating: {
         position: 'absolute',
-        top: '43%',
-        left: '43%',
+        top: hp('10%'),
+        left: wp('40%'),
         backgroundColor: '#edae2f',
         borderRadius: 35,
         display: 'flex',

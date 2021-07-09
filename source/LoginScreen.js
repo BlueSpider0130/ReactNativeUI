@@ -4,7 +4,7 @@ import { Container, Header, Title, Left, Right, Body, Icon, Item, Label, Input }
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
-function HomeScreen(props) {
+function LoginScreen(props) {
   const [pwdView, setPwdView] = useState(true);
 
   const setPasswordView = () => {
@@ -146,4 +146,4 @@ const styles = StyleSheet.create({
 
 // ...
 
-export default HomeScreen;
+export default LoginScreen;
